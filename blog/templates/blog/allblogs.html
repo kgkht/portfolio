@@ -7,9 +7,11 @@
     {% for blog in blogs %}
     <div class="col-4">
       <img src="{{blog.image.url}}" width=350 height=auto>
+      <a href="{% url 'blog:blogpost' blog.id %}">
       <h3 class="mt-2"> {{blog.title}} </h3>
-      <p> {{ blog.body }} </p>
-      <small> {{ blog.pub_date }} </small>
+      </a>
+      <p> {{ blog.summary }} </p>
+      <small> {{ blog.pub_date_pretty }} </small>
     </div>
     {% endfor %}
   </div>
